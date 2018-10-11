@@ -24,10 +24,10 @@ class App extends React.Component {
     const response = await api_call.json();
     if (city && country) {
       this.setState({
-        temperature: Math.trunc(response.main.temp - 273.15),
+        temperature: Math.trunc(response.main.temp - 273.15) + " °C",
         city: response.name,
         country: response.sys.country,
-        humidity: response.main.humidity,
+        humidity: response.main.humidity + "%",
         description: response.weather[0].description,
       })
     } else {
